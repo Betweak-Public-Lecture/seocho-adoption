@@ -27,6 +27,34 @@ Task5. (applyAdoption)다른 사용자가 입양 신청을 할 수 있게 만들
 Task6. (apprveAdoption)원 주인이 apply한 사용자를 승인하는 함수를 만들어라 해당 함수가 호출되면 (소유권?)은 이전된다. 
  */
 
+/**
+[과제2]
+주제: [Adoption Token ERC721로 구현하기]
+참조문서: https://eips.ethereum.org/EIPS/eip-721
+
+[과제 해결 조건]
+- 컴파일이 되어야 함
+- 요구한 Task가 존재해야 함.
+
+[과제 제출 메일]
+- 2sujin@ksbpartners.co.kr 
+- 너무 어려워서 다 완성을 못하더라도, 한 부분까지라도 제출 바랍니다 
+
+[ERC 721인터페이스를 참조하여 [과제1]에서 했던 내용들을 ERC721 인터페이스 규약에 맞춘 함수를 정의 하여라]
+
+
+[필요한 함수 및 변수]
+- function balanceOf(address owner) external view returns (uint256 balance); (필수)
+- function ownerOf(uint256 tokenId) external view returns (address owner); (필수)
+- function safeTransferFrom(address from, address to, uint256 tokenId) external; 
+- function transferFrom(address from, address to, uint256 tokenId) external; (필수)
+- function approve(address to, uint256 tokenId) external; (필수)
+- function getApproved(uint256 tokenId) external view returns (address operator); (필수 - 승인된 account의 address return)
+- function setApprovalForAll(address operator, bool _approved) external;
+- function isApprovedForAll(address owner, address operator) external view returns (bool);
+- function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;
+*/
+
 contract Adoption {
     // state: adopters;
     address[16] public adopters;
